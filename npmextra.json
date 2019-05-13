@@ -1,0 +1,17 @@
+{
+  "gitzone": {
+    "module": {
+      "githost": "gitlab.com",
+      "gitscope": "gitzone",
+      "gitrepo": "tsdoc",
+      "shortDescription": "a tool for better documentation",
+      "npmPackagename": "@gitzone/tsdoc",
+      "license": "MIT",
+      "projectDomain": "git.zone"
+    }
+  },
+  "npmci": {
+    "npmGlobalTools": [],
+    "npmAccessLevel": "public"
+  }
+}
