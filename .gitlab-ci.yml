@@ -109,7 +109,7 @@ pages:
   image: hosttoday/ht-docker-node:npmci
   stage: metadata
   script:
-    - npmci command npm install -g typedoc typescript @gitzone/tsdoc
+    - npmci command npm install -g typedoc typescript
     - npmci npm prepare
     - npmci npm install
     - npmci command typedoc --module "commonjs" --target "ES2016" --out public/ ts/
