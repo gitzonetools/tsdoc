@@ -7,8 +7,11 @@
   "typings": "dist/index.d.ts",
   "author": "Lossless GmbH",
   "license": "MIT",
+  "bin": {
+    "tsdoc": "cli.js"
+  },
   "scripts": {
-    "test": "(tstest test/)",
+    "test": "(tstest test/) && node ./cli.ts.js",
     "build": "(tsbuild)",
     "buildMkdocs": "(cd mkdocs/originalrepo && docker rmi -f mkdocs && docker build -t mkdocs .)",
     "format": "(gitzone format)"
@@ -22,7 +25,11 @@
     "tslint-config-prettier": "^1.15.0"
   },
   "dependencies": {
+    "@pushrocks/early": "^3.0.3",
     "@pushrocks/smartcli": "^3.0.7",
+    "@pushrocks/smartfile": "^7.0.2",
+    "@pushrocks/smartlog": "^2.0.19",
+    "@pushrocks/smartlog-destination-local": "^7.0.5",
     "typedoc": "^0.14.2"
   }
 }

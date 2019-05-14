@@ -1,8 +1,8 @@
 import { expect, tap } from '@pushrocks/tapbundle';
-import * as tsdoc from '../ts/index'
+import * as tsdoc from '../ts/index';
 
 tap.test('first test', async () => {
-  console.log(tsdoc.standardExport)
-})
+  console.log('test');
+});
 
-tap.start()
+tap.start();
