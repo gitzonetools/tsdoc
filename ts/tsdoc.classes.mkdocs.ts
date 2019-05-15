@@ -14,25 +14,47 @@ export class MkDocs {
     return result;
   }
 
+  public static async handleCommand(argvArg) {
+    const mkdocsInstance = new MkDocs(paths.cwd);
+    switch (true) {
+      case argvArg.serve:
+        await mkdocsInstance.serve();
+        break;
+      default:
+        await mkdocsInstance.compile();
+        break;
+    }
+  }
+
   // Instance
   public typedocDirectory: string;
   constructor(dirPathArg) {
-    this.typedocDirectory = dirPathArg; 
+    this.typedocDirectory = dirPathArg;
   }
 
-  public async update () {
-    await this.smartshellInstance.exec(`docker pull registry.gitlab.com/hosttoday/ht-docker-mkdocs`);
+  public async update() {
+    await this.smartshellInstance.exec(
+      `docker pull registry.gitlab.com/hosttoday/ht-docker-mkdocs`
+    );
   }
 
-  public async compile () {
+  public async compile() {
     await this.update();
     await this.smartshellInstance.exec(`rm -rf public/`);
-    await this.smartshellInstance.exec(`docker run --rm -it -p 8000:8000 -v ${paths.cwd}:/docs registry.gitlab.com/hosttoday/ht-docker-mkdocs build`);
+    await this.smartshellInstance.exec(
+      `docker run --rm -it -p 8000:8000 -v ${
+        paths.cwd
+      }:/docs registry.gitlab.com/hosttoday/ht-docker-mkdocs build`
+    );
     await this.smartshellInstance.exec(`gitzone commit`);
   }
 
-  public async serve () {
+  public async serve() {
     await this.update();
-    await this.smartshellInstance.exec(`docker run --rm -it -p 8000:8000 -v ${paths.cwd}:/docs registry.gitlab.com/hosttoday/ht-docker-mkdocs`);
+    await this.smartshellInstance.exec(
+      `docker run --rm -it -p 8000:8000 -v ${
+        paths.cwd
+      }:/docs registry.gitlab.com/hosttoday/ht-docker-mkdocs`
+    );
   }
 }

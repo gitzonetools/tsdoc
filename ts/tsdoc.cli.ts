@@ -8,10 +8,13 @@ import { MkDocs } from './tsdoc.classes.mkdocs';
 export const run = async () => {
   const tsdocCli = new plugins.smartcli.Smartcli();
   tsdocCli.addCommand('typedoc').subscribe(async argvArg => {
-
+    const typeDocInstance = new TypeDoc(paths.cwd);
+    await typeDocInstance.compile();
   });
 
-  tsdocCli.addCommand('mkdocs').subscribe(async argvArg => {});
+  tsdocCli.addCommand('mkdocs').subscribe(async argvArg => {
+    await MkDocs.handleCommand(argvArg);
+  });
 
   tsdocCli.standardTask().subscribe(async argvArg => {
     logger.log('warn', `Auto detecting environment!`);
@@ -19,11 +22,10 @@ export const run = async () => {
       case await TypeDoc.isTypeDocDir(paths.cwd):
         logger.log('ok', `Detected TypeDoc compliant directory at ${paths.cwd}`);
         tsdocCli.trigger('typedoc');
-        const typeDocInstance = new TypeDoc(paths.cwd);
-        await typeDocInstance.compile();
         break;
       case await MkDocs.isMkDocsDir(paths.cwd):
-      logger.log('ok', `Detected MkDocs compliant directory at ${paths.cwd}`);
+        logger.log('ok', `Detected MkDocs compliant directory at ${paths.cwd}`);
+        tsdocCli.trigger('mkdocs');
         break;
       default:
         logger.log('error', `Cannot determine docs format at ${paths.cwd}`);

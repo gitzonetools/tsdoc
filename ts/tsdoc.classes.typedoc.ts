@@ -18,10 +18,12 @@ export class TypeDoc {
   // Instance
   public typedocDirectory: string;
   constructor(dirPathArg) {
-    this.typedocDirectory = dirPathArg; 
+    this.typedocDirectory = dirPathArg;
   }
 
-  public async compile () {
-    await this.smartshellInstance.exec(`typedoc --module "commonjs" --target "ES2016" --out public/ ts/`);
+  public async compile() {
+    await this.smartshellInstance.exec(
+      `typedoc --module "commonjs" --target "ES2016" --out public/ ts/`
+    );
   }
 }
