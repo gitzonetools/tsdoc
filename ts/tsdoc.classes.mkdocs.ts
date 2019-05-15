@@ -45,7 +45,7 @@ export class MkDocs {
     await this.update();
     await this.smartshellInstance.exec(`rm -rf public/`);
     await this.smartshellInstance.exec(
-      `docker run --rm -it -p 8000:8000 -v ${
+      `docker run --rm -p 8000:8000 -v ${
         paths.cwd
       }:/docs registry.gitlab.com/hosttoday/ht-docker-mkdocs build`
     );
@@ -54,7 +54,7 @@ export class MkDocs {
   public async serve() {
     await this.update();
     await this.smartshellInstance.exec(
-      `docker run --rm -it -p 8000:8000 -v ${
+      `docker run --rm -p 8000:8000 -v ${
         paths.cwd
       }:/docs registry.gitlab.com/hosttoday/ht-docker-mkdocs`
     );
