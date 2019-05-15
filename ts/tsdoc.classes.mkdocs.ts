@@ -20,6 +20,9 @@ export class MkDocs {
       case argvArg.serve:
         await mkdocsInstance.serve();
         break;
+        case argvArg.publish:
+        await mkdocsInstance.publish();
+        break;
       default:
         await mkdocsInstance.compile();
         break;
@@ -56,5 +59,10 @@ export class MkDocs {
         paths.cwd
       }:/docs registry.gitlab.com/hosttoday/ht-docker-mkdocs`
     );
+  }
+
+  public async publish() {
+    await this.compile();
+    await this.smartshellInstance.exec(`gitzone commit`);
   }
 }
