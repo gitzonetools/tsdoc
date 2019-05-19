@@ -22,7 +22,6 @@ export class TypeDoc {
   }
 
   public async compile() {
-    console.log(paths.binDir);
     await this.smartshellInstance.exec(
       `typedoc --module "commonjs" --target "ES2016" --out public/ ts/`
     );
