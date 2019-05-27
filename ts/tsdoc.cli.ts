@@ -32,5 +32,12 @@ export const run = async () => {
     }
   });
 
+  tsdocCli.addCommand('test').subscribe(argvArg => {
+    tsdocCli.trigger('typedoc');
+    process.on('exit', async () => {
+      await plugins.smartfile.fs.remove(paths.publicDir);
+    });
+  });
+
   tsdocCli.startParse();
 };
