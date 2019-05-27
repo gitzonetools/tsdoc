@@ -1,6 +1,6 @@
 {
   "name": "@gitzone/tsdoc",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "private": false,
   "description": "a tool for better documentation",
   "main": "dist/index.js",
