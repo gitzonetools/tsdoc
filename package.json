@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@gitzone/tsbuild": "^2.0.22",
-    "@gitzone/tstest": "^1.0.21",
+    "@gitzone/tstest": "^1.0.22",
     "@pushrocks/tapbundle": "^3.0.7",
     "@types/node": "^12.0.2",
     "tslint": "^5.11.0",
@@ -30,7 +30,7 @@
     "@pushrocks/smartfile": "^7.0.2",
     "@pushrocks/smartlog": "^2.0.19",
     "@pushrocks/smartlog-destination-local": "^7.0.5",
-    "@pushrocks/smartshell": "^2.0.17",
+    "@pushrocks/smartshell": "^2.0.20",
     "typedoc": "^0.14.2",
     "typescript": "^3.4.5"
   }
