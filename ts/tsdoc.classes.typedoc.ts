@@ -23,7 +23,7 @@ export class TypeDoc {
 
   public async compile() {
     await this.smartshellInstance.exec(
-      `typedoc --module "commonjs" --target "ES2016" --out public/ ts/`
+      `typedoc --tsconfig ${paths.tsconfigFile} --out public/ ts/`
     );
   }
 }
