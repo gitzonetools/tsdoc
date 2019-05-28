@@ -33,5 +33,15 @@
     "@pushrocks/smartshell": "^2.0.22",
     "typedoc": "^0.14.2",
     "typescript": "^3.4.5"
-  }
+  },
+  "files": [
+    "ts/*",
+    "ts_web/*",
+    "dist/*",
+    "dist_web/*",
+    "assets/*",
+    "cli.js",
+    "npmextra.json",
+    "readme.md"
+  ]
 }
