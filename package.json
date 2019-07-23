@@ -19,20 +19,20 @@
   "devDependencies": {
     "@gitzone/tsbuild": "^2.0.22",
     "@gitzone/tstest": "^1.0.24",
-    "@pushrocks/tapbundle": "^3.0.7",
-    "@types/node": "^12.0.2",
-    "tslint": "^5.11.0",
+    "@pushrocks/tapbundle": "^3.0.11",
+    "@types/node": "^12.6.8",
+    "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.15.0"
   },
   "dependencies": {
     "@pushrocks/early": "^3.0.3",
     "@pushrocks/smartcli": "^3.0.7",
-    "@pushrocks/smartfile": "^7.0.2",
+    "@pushrocks/smartfile": "^7.0.4",
     "@pushrocks/smartlog": "^2.0.19",
-    "@pushrocks/smartlog-destination-local": "^7.0.5",
-    "@pushrocks/smartshell": "^2.0.22",
+    "@pushrocks/smartlog-destination-local": "^8.0.2",
+    "@pushrocks/smartshell": "^2.0.23",
     "typedoc": "^0.14.2",
-    "typescript": "^3.4.5"
+    "typescript": "^3.5.3"
   },
   "files": [
     "ts/*",
