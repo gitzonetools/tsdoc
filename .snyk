@@ -10,4 +10,8 @@ ignore:
     - typedoc > shelljs:
         reason: None given
         expires: '2019-06-13T06:50:33.594Z'
+  SNYK-JS-HANDLEBARS-469063:
+    - typedoc > handlebars:
+        reason: None given
+        expires: '2019-11-13T11:12:56.134Z'
 patch: {}
