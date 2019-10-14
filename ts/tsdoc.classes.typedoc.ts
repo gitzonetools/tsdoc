@@ -22,8 +22,12 @@ export class TypeDoc {
   }
 
   public async compile() {
+    let tsDir: 'ts' | 'ts_web';
+    plugins.smartfile.fs.isDirectory(plugins.path.join(this.typedocDirectory, 'ts')) ? tsDir = 'ts' : null;
+    plugins.smartfile.fs.isDirectory(plugins.path.join(this.typedocDirectory, 'ts_web')) ? tsDir = 'ts_web' : null;
+
     await this.smartshellInstance.exec(
-      `typedoc --tsconfig ${paths.tsconfigFile} --out public/ ts/`
+      `typedoc --tsconfig ${paths.tsconfigFile} --out public/ ${tsDir}`
     );
   }
 }
