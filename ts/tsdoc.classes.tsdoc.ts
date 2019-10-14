@@ -53,10 +53,10 @@ export class TsDoc {
   /**
    * runs additional tasks from package.json
    */
-  public runAdditionalTasks() {
+  public async runAdditionalTasks() {
     const packageJson = plugins.smartfile.fs.toObjectSync(plugins.path.join(this.cwd, 'package.json'));
     if (packageJson.scripts.tsdoc) {
-      this.smartshellInstance.exec('npm run tsdoc');
+      await this.smartshellInstance.exec('npm run tsdoc');
     }
   }
 }
