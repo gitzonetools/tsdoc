@@ -13,26 +13,25 @@
   "scripts": {
     "test": "(tstest test/) && (node ./cli.ts.js) && rm -rf public/",
     "build": "(tsbuild)",
-    "buildMkdocs": "(cd mkdocs/originalrepo && docker rmi -f mkdocs && docker build -t mkdocs .)",
     "format": "(gitzone format)"
   },
   "devDependencies": {
     "@gitzone/tsbuild": "^2.1.17",
-    "@gitzone/tstest": "^1.0.24",
+    "@gitzone/tstest": "^1.0.28",
     "@pushrocks/tapbundle": "^3.0.13",
-    "@types/node": "^12.7.5",
+    "@types/node": "^12.7.12",
     "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.15.0"
   },
   "dependencies": {
     "@pushrocks/early": "^3.0.3",
     "@pushrocks/smartcli": "^3.0.7",
-    "@pushrocks/smartfile": "^7.0.4",
+    "@pushrocks/smartfile": "^7.0.6",
     "@pushrocks/smartlog": "^2.0.19",
     "@pushrocks/smartlog-destination-local": "^8.0.2",
     "@pushrocks/smartshell": "^2.0.25",
     "typedoc": "^0.15.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.4"
   },
   "files": [
     "ts/*",

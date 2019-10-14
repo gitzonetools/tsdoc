@@ -31,7 +31,7 @@ export class MkDocs {
 
   // Instance
   public typedocDirectory: string;
-  constructor(dirPathArg) {
+  constructor(dirPathArg: string) {
     this.typedocDirectory = dirPathArg;
   }
 
