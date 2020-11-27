@@ -3,4 +3,7 @@ early.start('tsdoc');
 import * as plugins from './tsdoc.plugins';
 import * as cli from './tsdoc.cli';
 early.stop();
-cli.run();
+
+export const runCli = async () => {
+  await cli.run();
+};
