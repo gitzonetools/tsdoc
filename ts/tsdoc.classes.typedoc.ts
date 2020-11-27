@@ -21,7 +21,9 @@ export class TypeDoc {
     this.typedocDirectory = dirPathArg;
   }
 
-  public async compile() {
+  public async compile(options?: {
+    publicSubdir?: string;
+  }) {
     const data = {
       compilerOptions: {
         target: 'es2017',
@@ -33,6 +35,10 @@ export class TypeDoc {
     };
     data.include = [plugins.path.join(paths.cwd, './ts/**/*')];
     await plugins.smartfile.memory.toFs(JSON.stringify(data), paths.tsconfigFile);
+    let targetDir = paths.publicDir;
+    if (options?.publicSubdir) {
+      targetDir = plugins.path.join(targetDir, options.publicSubdir);
+    }
     await this.smartshellInstance.exec(
       `typedoc --tsconfig ${paths.tsconfigFile} --out ${paths.publicDir}`
     );
