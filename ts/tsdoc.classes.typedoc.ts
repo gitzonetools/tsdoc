@@ -40,7 +40,7 @@ export class TypeDoc {
       targetDir = plugins.path.join(targetDir, options.publicSubdir);
     }
     await this.smartshellInstance.exec(
-      `typedoc --tsconfig ${paths.tsconfigFile} --out ${paths.publicDir}`
+      `typedoc --tsconfig ${paths.tsconfigFile} --out ${targetDir}`
     );
     plugins.smartfile.fs.remove(paths.tsconfigFile);
   }
