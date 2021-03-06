@@ -25,6 +25,7 @@ Platform support | [![Supports Windows 10](https://badgen.net/badge/supports%20W
 
 ## Usage
 
+Use TypeScript for best in class intellisense.
 
 ## Contribution
 

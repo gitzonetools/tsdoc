@@ -22,7 +22,7 @@ export const run = async () => {
   tsdocCli.addCommand('typedoc').subscribe(async (argvArg) => {
     const typeDocInstance = new TypeDoc(paths.cwd);
     await typeDocInstance.compile({
-      publicSubdir: argvArg.publicSubdir
+      publicSubdir: argvArg.publicSubdir,
     });
   });
 
