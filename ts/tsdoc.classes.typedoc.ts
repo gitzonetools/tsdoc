@@ -31,10 +31,14 @@ export class TypeDoc {
       },
       include: [],
     };
-    data.include = [
-      plugins.path.join(paths.cwd, './ts/**/*'),
-      plugins.path.join(paths.cwd, './ts_web/**/*'),
-    ];
+    if (plugins.smartfile.fs.isDirectory(plugins.path.join(paths.cwd, './ts'))) {
+      data.include.push(plugins.path.join(paths.cwd, './ts/**/*'));
+    }
+
+    if (plugins.smartfile.fs.isDirectory(plugins.path.join(paths.cwd, './ts_web'))) {
+      data.include.push(plugins.path.join(paths.cwd, './ts_web/**/*'));
+    }
+
     await plugins.smartfile.memory.toFs(JSON.stringify(data), paths.tsconfigFile);
     let targetDir = paths.publicDir;
     if (options?.publicSubdir) {
