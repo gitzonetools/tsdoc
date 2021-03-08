@@ -31,12 +31,17 @@ export class TypeDoc {
       },
       include: [],
     };
+    let startDirectory = '';
     if (plugins.smartfile.fs.isDirectory(plugins.path.join(paths.cwd, './ts'))) {
       data.include.push(plugins.path.join(paths.cwd, './ts/**/*'));
+      startDirectory = 'ts';
     }
 
     if (plugins.smartfile.fs.isDirectory(plugins.path.join(paths.cwd, './ts_web'))) {
       data.include.push(plugins.path.join(paths.cwd, './ts_web/**/*'));
+      if (!startDirectory) {
+        startDirectory = 'ts_web';
+      }
     }
 
     await plugins.smartfile.memory.toFs(JSON.stringify(data), paths.tsconfigFile);
@@ -45,7 +50,7 @@ export class TypeDoc {
       targetDir = plugins.path.join(targetDir, options.publicSubdir);
     }
     await this.smartshellInstance.exec(
-      `typedoc --tsconfig ${paths.tsconfigFile} --out ${targetDir} ts/index.ts`
+      `typedoc --tsconfig ${paths.tsconfigFile} --out ${targetDir} ${startDirectory}/index.ts`
     );
     plugins.smartfile.fs.remove(paths.tsconfigFile);
   }
