@@ -1,8 +1,8 @@
-import * as plugins from './tsdoc.plugins';
-import * as paths from './tsdoc.paths';
-import { logger } from './tsdoc.logging';
+import * as plugins from './tsdoc.plugins.js';
+import * as paths from './tsdoc.paths.js';
+import { logger } from './tsdoc.logging.js';
 
-import { TypeDoc } from './tsdoc.classes.typedoc';
+import { TypeDoc } from './tsdoc.classes.typedoc.js';
 
 export const run = async () => {
   const tsdocCli = new plugins.smartcli.Smartcli();

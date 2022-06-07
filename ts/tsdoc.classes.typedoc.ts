@@ -1,5 +1,5 @@
-import * as plugins from './tsdoc.plugins';
-import * as paths from './tsdoc.paths';
+import * as plugins from './tsdoc.plugins.js';
+import * as paths from './tsdoc.paths.js';
 
 export class TypeDoc {
   public smartshellInstance = new plugins.smartshell.Smartshell({
@@ -9,10 +9,7 @@ export class TypeDoc {
 
   // Static
   public static async isTypeDocDir(dirPathArg: string): Promise<boolean> {
-    const result = await plugins.smartfile.fs.fileExists(
-      plugins.path.join(dirPathArg, 'mkdocs.yml')
-    );
-    return !result;
+    return true;
   }
 
   // Instance
@@ -24,10 +21,12 @@ export class TypeDoc {
   public async compile(options?: { publicSubdir?: string }) {
     const data = {
       compilerOptions: {
-        target: 'es2017',
-        module: 'commonjs',
-        esModuleInterop: true,
-        experimentalDecorators: true,
+        "experimentalDecorators": true,
+        "useDefineForClassFields": false,
+        "target": "ES2022",
+        "module": "ES2022",
+        "moduleResolution": "nodenext",
+        "skipLibCheck": true
       },
       include: [],
     };

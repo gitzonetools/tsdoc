@@ -1,4 +1,4 @@
-import * as plugins from './tsdoc.plugins';
+import * as plugins from './tsdoc.plugins.js';
 
 export const logger = new plugins.smartlog.Smartlog({
   logContext: {

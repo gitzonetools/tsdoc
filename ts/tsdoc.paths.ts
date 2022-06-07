@@ -1,7 +1,7 @@
-import * as plugins from './tsdoc.plugins';
+import * as plugins from './tsdoc.plugins.js';
 
 // dirs
-export const packageDir = plugins.path.join(__dirname, '../');
+export const packageDir = plugins.path.join(plugins.smartpath.get.dirnameFromImportMetaUrl(import.meta.url), '../');
 export const cwd = process.cwd();
 export const binDir = plugins.path.join(packageDir, './node_modules/.bin');
 export const assetsDir = plugins.path.join(packageDir, './assets');
