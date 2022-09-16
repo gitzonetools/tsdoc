@@ -16,21 +16,21 @@
     "build": "(tsbuild --web --allowimplicitany)"
   },
   "devDependencies": {
-    "@gitzone/tsbuild": "^2.1.63",
-    "@gitzone/tstest": "^1.0.71",
-    "@pushrocks/tapbundle": "^5.0.3",
-    "@types/node": "^17.0.40"
+    "@gitzone/tsbuild": "^2.1.65",
+    "@gitzone/tstest": "^1.0.73",
+    "@pushrocks/tapbundle": "^5.0.4",
+    "@types/node": "^18.7.18"
   },
   "dependencies": {
     "@pushrocks/early": "^4.0.3",
-    "@pushrocks/smartcli": "^3.0.14",
-    "@pushrocks/smartfile": "^10.0.1",
-    "@pushrocks/smartlog": "^2.0.44",
+    "@pushrocks/smartcli": "^4.0.6",
+    "@pushrocks/smartfile": "^10.0.5",
+    "@pushrocks/smartlog": "^3.0.1",
     "@pushrocks/smartlog-destination-local": "^8.0.8",
     "@pushrocks/smartpath": "^5.0.5",
     "@pushrocks/smartshell": "^2.0.30",
-    "typedoc": "^0.22.17",
-    "typescript": "^4.7.3"
+    "typedoc": "^0.23.14",
+    "typescript": "^4.8.3"
   },
   "files": [
     "ts/**/*",

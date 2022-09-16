@@ -26,7 +26,8 @@ export class TypeDoc {
         "target": "ES2022",
         "module": "ES2022",
         "moduleResolution": "nodenext",
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true,
       },
       include: [],
     };
