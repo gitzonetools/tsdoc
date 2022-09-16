@@ -7,12 +7,12 @@ import { TypeDoc } from './tsdoc.classes.typedoc.js';
 export const run = async () => {
   const tsdocCli = new plugins.smartcli.Smartcli();
 
-  tsdocCli.standardTask().subscribe(async (argvArg) => {
+  tsdocCli.standardCommand().subscribe(async (argvArg) => {
     logger.log('warn', `Auto detecting environment!`);
     switch (true) {
       case await TypeDoc.isTypeDocDir(paths.cwd):
         logger.log('ok', `Detected TypeDoc compliant directory at ${paths.cwd}`);
-        tsdocCli.trigger('typedoc');
+        tsdocCli.triggerCommand('typedoc', argvArg);
         break;
       default:
         logger.log('error', `Cannot determine docs format at ${paths.cwd}`);
@@ -27,7 +27,7 @@ export const run = async () => {
   });
 
   tsdocCli.addCommand('test').subscribe((argvArg) => {
-    tsdocCli.trigger('typedoc');
+    tsdocCli.triggerCommand('typedoc', argvArg);
     process.on('exit', async () => {
       await plugins.smartfile.fs.remove(paths.publicDir);
     });
